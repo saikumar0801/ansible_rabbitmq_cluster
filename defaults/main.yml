@@ -28,11 +28,12 @@ erlang_deb_repo_url: https://dl.bintray.com/rabbitmq-erlang/debian
 erlang_deb_gpg_url: https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc
 erlang_deb_repo_tpl: etc/apt/sources.list.d/rabbitmq_erlang.list.j2
 erlang_deb_pinning_tpl: etc/apt/preferences.d/erlang.j2
-erlang_series_deb_version:22.3
+erlang_series_deb_version:
 
 
 
 # cluster
+
 rabbitmq_create_cluster: yes
 rabbitmq_erlang_cookie: WKRBTTEQRYPTQOPUKSVF
 # https://www.rabbitmq.com/configure.html#define-environment-variables
@@ -40,6 +41,7 @@ rabbitmq_erlang_cookie: WKRBTTEQRYPTQOPUKSVF
 # This may prove useful on EC2.
 # Note that it is not possible to switch between using short and long names without resetting the node.
 rabbitmq_use_longname: 'false'
+rabbitmq_cluster_master: ip-10-0-0-105
 
 # log rotate
 rabbitmq_logrotate_period: weekly

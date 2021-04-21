@@ -65,7 +65,6 @@
     name: rabbitmq-server
     enabled: yes
     state: started
-	
 - name: make sure rabbitmq server is up
   service:
     name: rabbitmq-server

@@ -94,9 +94,11 @@
   shell: rabbitmqctl list_policies
   register: list_policies
   changed_when: false
+  when: backup_queues_in_two_nodes
 
 - name: set ha-mode to exactly two nodes for all queues for backup
   shell: rabbitmqctl set_policy ha-exactly-two ".*" '{"ha-mode":"exactly","ha-params":2,"ha-sync-mode":"automatic"}'
   register: res
   failed_when: res.rc != 0
   when: list_policies.stdout.find("ha-exactly-two") == -1
+  when: backup_queues_in_two_nodes

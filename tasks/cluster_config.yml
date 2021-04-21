@@ -60,7 +60,6 @@
   with_items: "{{ rabbitmq_plugins }}"
   notify:
     restart rabbitmq-server
-	
 - name: rabbitmq service started and enabled
   service:
     name: rabbitmq-server
